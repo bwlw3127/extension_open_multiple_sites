@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "googleScraper",
+  "description": "googleScraper",
+  "version": "1.0",
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts":[
+     {
+       "matches":[
+         "<all_urls>"
+       ],
+       "js":["content.js"]
+     }
+   ],
+  "content_security_policy": "default-src 'self'; script-src 'self' https://ajax.googleapis.com 'unsafe-eval'; style-src * 'unsafe-inline';",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+      "default_popup": "options.html"
+  }
+}
