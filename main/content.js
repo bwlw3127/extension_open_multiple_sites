@@ -1,3 +1,4 @@
+//main function
 chrome.runtime.onMessage.addListener(
   function(request, sender){
     let queries = request.queryBank.split(/\r?\n/);
